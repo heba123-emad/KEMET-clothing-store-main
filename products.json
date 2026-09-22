@@ -1,0 +1,704 @@
+[
+  {
+    "id": 1,
+    "name": "سلاسل مصريه اصيله",
+    "category": "Accessories",
+    "price": 650,
+    "image": "images/accessory-1.jpg",
+    "badge": "NEW",
+    "colors": [
+      "sand",
+      "black",
+      "cream"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "سلاسل مصريه اصيله",
+    "category": "Accessories",
+    "price": 700,
+    "image": "images/accessory-2.jpg",
+    "badge": "BESTSELLER",
+    "colors": [
+      "cream",
+      "brown",
+      "gold"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "سلاسل مصريه اصيله",
+    "category": "Accessories",
+    "price": 950,
+    "image": "images/accessory-3.jpg",
+    "badge": "",
+    "colors": [
+      "sand",
+      "black",
+      "cream"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "سلاسل مصريه اصيله",
+    "category": "Accessories",
+    "price": 1100,
+    "image": "images/accessory-4.jpg",
+    "badge": "",
+    "colors": [
+      "cream",
+      "brown",
+      "gold"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "PAPYRUS SILK SCARF",
+    "category": "Accessories",
+    "price": 850,
+    "image": "images/accessory-5.jpg",
+    "badge": "",
+    "colors": [
+      "sand",
+      "black",
+      "cream"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "EGYPTIAN BRACELETS",
+    "category": "Accessories",
+    "price": 900,
+    "image": "images/accessory-6.jpg",
+    "badge": "",
+    "colors": [
+      "cream",
+      "brown",
+      "gold"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "FULL BLACK DRESS",
+    "category": "Dresses",
+    "price": 1900,
+    "image": "images/dress-1.jpg",
+    "badge": "NEW",
+    "colors": [
+      "sand",
+      "black",
+      "cream"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "WHITE AND TOUCH OF BLUE DRESS",
+    "category": "Dresses",
+    "price": 2100,
+    "image": "images/dress-2.jpg",
+    "badge": "BESTSELLER",
+    "colors": [
+      "cream",
+      "brown",
+      "gold"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "WHITE AND BROWN DRESS",
+    "category": "Dresses",
+    "price": 1750,
+    "image": "images/dress-3.jpg",
+    "badge": "",
+    "colors": [
+      "sand",
+      "black",
+      "cream"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "GOLD TRIM MIDI DRESS",
+    "category": "Dresses",
+    "price": 1850,
+    "image": "images/dress-4.jpg",
+    "badge": "",
+    "colors": [
+      "cream",
+      "brown",
+      "gold"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "SCARAB SATIN DRESS",
+    "category": "Dresses",
+    "price": 2300,
+    "image": "images/dress-5.jpg",
+    "badge": "",
+    "colors": [
+      "sand",
+      "black",
+      "cream"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "DESERT WRAP DRESS",
+    "category": "Dresses",
+    "price": 1650,
+    "image": "images/dress-6.jpg",
+    "badge": "",
+    "colors": [
+      "cream",
+      "brown",
+      "gold"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "KEMET ARCH HOODIE",
+    "category": "Hoodies",
+    "price": 1450,
+    "image": "images/hoodie-1.jpg",
+    "badge": "NEW",
+    "colors": [
+      "sand",
+      "black",
+      "cream"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "الوطن ثم الوطن",
+    "category": "Hoodies",
+    "price": 1550,
+    "image": "images/hoodie-2.jpg",
+    "badge": "BESTSELLER",
+    "colors": [
+      "cream",
+      "brown",
+      "gold"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "HABEBY COME TO EGYPT HOODIE",
+    "category": "Hoodies",
+    "price": 1350,
+    "image": "images/hoodie-3.jpg",
+    "badge": "",
+    "colors": [
+      "sand",
+      "black",
+      "cream"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "DUNE ZIP HOODIE",
+    "category": "Hoodies",
+    "price": 1650,
+    "image": "images/hoodie-4.jpg",
+    "badge": "",
+    "colors": [
+      "cream",
+      "brown",
+      "gold"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "خدني علي بلادي HOODIE",
+    "category": "Hoodies",
+    "price": 1400,
+    "image": "images/hoodie-5.jpg",
+    "badge": "",
+    "colors": [
+      "sand",
+      "black",
+      "cream"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "مفتاح الحياة",
+    "category": "Hoodies",
+    "price": 1750,
+    "image": "images/hoodie-6.jpg",
+    "badge": "",
+    "colors": [
+      "cream",
+      "brown",
+      "gold"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "KEMET UTILITY JACKET",
+    "category": "Jackets",
+    "price": 2400,
+    "image": "images/jacket-1.jpg",
+    "badge": "NEW",
+    "colors": [
+      "sand",
+      "black",
+      "cream"
+    ]
+  },
+  {
+    "id": 20,
+    "name": "SANDSTONE BOMBER",
+    "category": "Jackets",
+    "price": 2200,
+    "image": "images/jacket-2.jpg",
+    "badge": "BESTSELLER",
+    "colors": [
+      "cream",
+      "brown",
+      "gold"
+    ]
+  },
+  {
+    "id": 21,
+    "name": "OBELISK TRENCH",
+    "category": "Jackets",
+    "price": 3200,
+    "image": "images/jacket-3.jpg",
+    "badge": "",
+    "colors": [
+      "sand",
+      "black",
+      "cream"
+    ]
+  },
+  {
+    "id": 22,
+    "name": "DESERT DENIM JACKET",
+    "category": "Jackets",
+    "price": 1950,
+    "image": "images/jacket-4.jpg",
+    "badge": "",
+    "colors": [
+      "cream",
+      "brown",
+      "gold"
+    ]
+  },
+  {
+    "id": 23,
+    "name": "KEMET LEATHER JACKET",
+    "category": "Jackets",
+    "price": 3600,
+    "image": "images/jacket-5.jpg",
+    "badge": "",
+    "colors": [
+      "sand",
+      "black",
+      "cream"
+    ]
+  },
+  {
+    "id": 24,
+    "name": "PAPYRUS CHORE JACKET",
+    "category": "Jackets",
+    "price": 2050,
+    "image": "images/jacket-6.jpg",
+    "badge": "",
+    "colors": [
+      "cream",
+      "brown",
+      "gold"
+    ]
+  },
+  {
+    "id": 25,
+    "name": "KARNAK STRAIGHT JEANS",
+    "category": "Jeans",
+    "price": 1600,
+    "image": "images/jeans-1.jpg",
+    "badge": "NEW",
+    "colors": [
+      "sand",
+      "black",
+      "cream"
+    ]
+  },
+  {
+    "id": 26,
+    "name": "DESERT WASH JEANS",
+    "category": "Jeans",
+    "price": 1500,
+    "image": "images/jeans-2.jpg",
+    "badge": "BESTSELLER",
+    "colors": [
+      "cream",
+      "brown",
+      "gold"
+    ]
+  },
+  {
+    "id": 27,
+    "name": "NILE RELAXED JEANS",
+    "category": "Jeans",
+    "price": 1700,
+    "image": "images/jeans-3.jpg",
+    "badge": "",
+    "colors": [
+      "sand",
+      "black",
+      "cream"
+    ]
+  },
+  {
+    "id": 28,
+    "name": "OBSIDIAN SLIM JEANS",
+    "category": "Jeans",
+    "price": 1450,
+    "image": "images/jeans-4.jpg",
+    "badge": "",
+    "colors": [
+      "cream",
+      "brown",
+      "gold"
+    ]
+  },
+  {
+    "id": 29,
+    "name": "DELTA WIDE JEANS",
+    "category": "Jeans",
+    "price": 1650,
+    "image": "images/jeans-5.jpg",
+    "badge": "",
+    "colors": [
+      "sand",
+      "black",
+      "cream"
+    ]
+  },
+  {
+    "id": 30,
+    "name": "KEMET CARPENTER JEANS",
+    "category": "Jeans",
+    "price": 1550,
+    "image": "images/jeans-6.jpg",
+    "badge": "",
+    "colors": [
+      "cream",
+      "brown",
+      "gold"
+    ]
+  },
+  {
+    "id": 31,
+    "name": "KEMET PLEATED TROUSER",
+    "category": "Pants",
+    "price": 1400,
+    "image": "images/pants-1.jpg",
+    "badge": "NEW",
+    "colors": [
+      "sand",
+      "black",
+      "cream"
+    ]
+  },
+  {
+    "id": 32,
+    "name": "CAIRO CARGO PANT",
+    "category": "Pants",
+    "price": 1300,
+    "image": "images/pants-2.jpg",
+    "badge": "BESTSELLER",
+    "colors": [
+      "cream",
+      "brown",
+      "gold"
+    ]
+  },
+  {
+    "id": 33,
+    "name": "LINEN COLUMN PANT",
+    "category": "Pants",
+    "price": 1250,
+    "image": "images/pants-3.jpg",
+    "badge": "",
+    "colors": [
+      "sand",
+      "black",
+      "cream"
+    ]
+  },
+  {
+    "id": 34,
+    "name": "DUNE TAILORED PANT",
+    "category": "Pants",
+    "price": 1550,
+    "image": "images/pants-4.jpg",
+    "badge": "",
+    "colors": [
+      "cream",
+      "brown",
+      "gold"
+    ]
+  },
+  {
+    "id": 35,
+    "name": "SUNSET TRACK PANT",
+    "category": "Pants",
+    "price": 1150,
+    "image": "images/pants-5.jpg",
+    "badge": "",
+    "colors": [
+      "sand",
+      "black",
+      "cream"
+    ]
+  },
+  {
+    "id": 36,
+    "name": "KARNAK WIDE PANT",
+    "category": "Pants",
+    "price": 1450,
+    "image": "images/pants-6.jpg",
+    "badge": "",
+    "colors": [
+      "cream",
+      "brown",
+      "gold"
+    ]
+  },
+  {
+    "id": 37,
+    "name": "CAIRO LINEN SET",
+    "category": "Sets",
+    "price": 2600,
+    "image": "images/set-1.jpg",
+    "badge": "NEW",
+    "colors": [
+      "sand",
+      "black",
+      "cream"
+    ]
+  },
+  {
+    "id": 38,
+    "name": "KEMET KNIT SET",
+    "category": "Sets",
+    "price": 2400,
+    "image": "images/set-2.jpg",
+    "badge": "BESTSELLER",
+    "colors": [
+      "cream",
+      "brown",
+      "gold"
+    ]
+  },
+  {
+    "id": 39,
+    "name": "DUNE TRACK SET",
+    "category": "Sets",
+    "price": 2250,
+    "image": "images/set-3.jpg",
+    "badge": "",
+    "colors": [
+      "sand",
+      "black",
+      "cream"
+    ]
+  },
+  {
+    "id": 40,
+    "name": "PAPYRUS CO-ORD SET",
+    "category": "Sets",
+    "price": 2800,
+    "image": "images/set-4.jpg",
+    "badge": "",
+    "colors": [
+      "cream",
+      "brown",
+      "gold"
+    ]
+  },
+  {
+    "id": 41,
+    "name": "OBELISK SHIRT SET",
+    "category": "Sets",
+    "price": 2950,
+    "image": "images/set-5.jpg",
+    "badge": "",
+    "colors": [
+      "sand",
+      "black",
+      "cream"
+    ]
+  },
+  {
+    "id": 42,
+    "name": "SAND TERRY SET",
+    "category": "Sets",
+    "price": 2150,
+    "image": "images/set-6.jpg",
+    "badge": "",
+    "colors": [
+      "cream",
+      "brown",
+      "gold"
+    ]
+  },
+  {
+    "id": 43,
+    "name": "CAIRO LINEN SHIRT",
+    "category": "Shirts",
+    "price": 1350,
+    "image": "images/shirt-1.jpg",
+    "badge": "NEW",
+    "colors": [
+      "sand",
+      "black",
+      "cream"
+    ]
+  },
+  {
+    "id": 44,
+    "name": "LUXOR CAMP COLLAR",
+    "category": "Shirts",
+    "price": 1250,
+    "image": "images/shirt-2.jpg",
+    "badge": "BESTSELLER",
+    "colors": [
+      "cream",
+      "brown",
+      "gold"
+    ]
+  },
+  {
+    "id": 45,
+    "name": "OBELISK OVERSHIRT",
+    "category": "Shirts",
+    "price": 1450,
+    "image": "images/shirt-3.jpg",
+    "badge": "",
+    "colors": [
+      "sand",
+      "black",
+      "cream"
+    ]
+  },
+  {
+    "id": 46,
+    "name": "PAPYRUS POPLIN SHIRT",
+    "category": "Shirts",
+    "price": 1200,
+    "image": "images/shirt-4.jpg",
+    "badge": "",
+    "colors": [
+      "cream",
+      "brown",
+      "gold"
+    ]
+  },
+  {
+    "id": 47,
+    "name": "SANDSTONE STRIPE SHIRT",
+    "category": "Shirts",
+    "price": 1300,
+    "image": "images/shirt-5.jpg",
+    "badge": "",
+    "colors": [
+      "sand",
+      "black",
+      "cream"
+    ]
+  },
+  {
+    "id": 48,
+    "name": "NILE SILK SHIRT",
+    "category": "Shirts",
+    "price": 1600,
+    "image": "images/shirt-6.jpg",
+    "badge": "",
+    "colors": [
+      "cream",
+      "brown",
+      "gold"
+    ]
+  },
+  {
+    "id": 49,
+    "name": "KEMET SIGNATURE TEE",
+    "category": "T-Shirts",
+    "price": 850,
+    "image": "images/tshirt-1.jpg",
+    "badge": "NEW",
+    "colors": [
+      "sand",
+      "black",
+      "cream"
+    ]
+  },
+  {
+    "id": 50,
+    "name": "مصر هي امي",
+    "category": "T-Shirts",
+    "price": 790,
+    "image": "images/tshirt-2.jpg",
+    "badge": "BESTSELLER",
+    "colors": [
+      "cream",
+      "brown",
+      "gold"
+    ]
+  },
+  {
+    "id": 51,
+    "name": "NILE OVERSIZED TEE",
+    "category": "T-Shirts",
+    "price": 900,
+    "image": "images/tshirt-3.jpg",
+    "badge": "",
+    "colors": [
+      "sand",
+      "black",
+      "cream"
+    ]
+  },
+  {
+    "id": 52,
+    "name": "مفتاح الحياة",
+    "category": "T-Shirts",
+    "price": 750,
+    "image": "images/tshirt-4.jpg",
+    "badge": "",
+    "colors": [
+      "cream",
+      "brown",
+      "gold"
+    ]
+  },
+  {
+    "id": 53,
+    "name": "CAIRO MODERN",
+    "category": "T-Shirts",
+    "price": 880,
+    "image": "images/tshirt-5.jpg",
+    "badge": "",
+    "colors": [
+      "sand",
+      "black",
+      "cream"
+    ]
+  },
+  {
+    "id": 54,
+    "name": "HIEROGLYPH GRAPHIC",
+    "category": "T-Shirts",
+    "price": 720,
+    "image": "images/tshirt-6.jpg",
+    "badge": "",
+    "colors": [
+      "cream",
+      "brown",
+      "gold"
+    ]
+  }
+]

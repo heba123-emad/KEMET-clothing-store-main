@@ -1,0 +1,619 @@
+/* =========================
+   01. FONTS, TOKENS + THEMES
+   ========================= */
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+  /* brand colours - these never change between themes */
+  --yellow: #d6a928;
+  --bright-yellow: #e5bd3f;
+  --black: #11100d;
+  --dark-brown: #2a1d12;
+  --brown: #5a3e20;
+  --sand: #c9ae78;
+  --papyrus: #e8d8b5;
+  --cream: #f4e8cc;
+
+  /* type families */
+  --serif: "Cinzel", "Times New Roman", Georgia, serif;
+  --sans: "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
+
+  /* type scale - large and readable on every screen */
+  --fs-hero: clamp(3rem, 8vw, 8rem);
+  --fs-h1: clamp(2.5rem, 6vw, 5rem);
+  --fs-h2: clamp(2rem, 4vw, 4rem);
+  --fs-h3: clamp(1.35rem, 2vw, 1.9rem);
+  --fs-lead: clamp(1.0625rem, 1.25vw, 1.3rem);
+  --fs-body: 1.0625rem;
+  --fs-small: 0.9375rem;
+  --fs-label: 0.8125rem;
+  --fs-btn: 0.9375rem;
+
+  /* layout */
+  --page-w: 1400px;
+  --gutter: clamp(1.25rem, 4vw, 4rem);
+  --radius: 2px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---- DARK THEME (default) ---------------------------------
+   Every component reads these variables, so a theme is just a
+   different set of values. ---------------------------------- */
+.page,
+.ai-widget {
+  --bg: #11100d;
+  --bg-alt: #0a0908;
+  --surface: #17140f;
+  --surface-2: #1e1a13;
+
+  --text: #f4e8cc;
+  --text-soft: rgba(244, 232, 204, 0.74);
+  --text-mute: rgba(244, 232, 204, 0.55);
+
+  --accent: #d6a928;
+  --accent-strong: #e5bd3f;
+  --btn-bg: #d6a928;
+  --btn-text: #11100d;
+
+  --line: rgba(214, 169, 40, 0.3);
+  --line-soft: rgba(244, 232, 204, 0.14);
+
+  --header-bg: rgba(10, 9, 8, 0.92);
+  --footer-bg: #0a0908;
+
+  --shadow: 0 30px 70px rgba(0, 0, 0, 0.55);
+  --img-tone: none;
+}
+
+/* ---- LIGHT THEME - "KEMET DAY" ---------------------------- */
+.theme-input:checked ~ .page,
+.theme-input:checked ~ .ai-widget {
+  --bg: #f4e8cc;
+  --bg-alt: #e8d8b5;
+  --surface: #fbf4e4;
+  --surface-2: #fffdf6;
+
+  --text: #11100d;
+  --text-soft: rgba(42, 29, 18, 0.8);
+  --text-mute: rgba(42, 29, 18, 0.62);
+
+  --accent: #8a6512;
+  --accent-strong: #5a3e20;
+  --btn-bg: #d6a928;
+  --btn-text: #11100d;
+
+  --line: rgba(90, 62, 32, 0.32);
+  --line-soft: rgba(42, 29, 18, 0.16);
+
+  --header-bg: rgba(251, 244, 228, 0.92);
+  --footer-bg: #e8d8b5;
+
+  --shadow: 0 26px 60px rgba(42, 29, 18, 0.18);
+  --img-tone: saturate(1.03) contrast(1.03);
+}
+
+/* ---- INVERTED SECTION -------------------------------------
+   A block that flips against the current theme: a sand panel
+   at night, a black panel during the day. ------------------- */
+.sec-invert {
+  --bg: #e8d8b5;
+  --bg-alt: #ddcba2;
+  --surface: rgba(255, 255, 255, 0.42);
+  --surface-2: rgba(255, 255, 255, 0.6);
+  --text: #11100d;
+  --text-soft: rgba(42, 29, 18, 0.82);
+  --text-mute: rgba(42, 29, 18, 0.64);
+  --accent: #7a5810;
+  --accent-strong: #5a3e20;
+  --btn-bg: #11100d;
+  --btn-text: #f4e8cc;
+  --line: rgba(90, 62, 32, 0.34);
+  --line-soft: rgba(42, 29, 18, 0.16);
+}
+
+.theme-input:checked ~ .page .sec-invert {
+  --bg: #11100d;
+  --bg-alt: #0a0908;
+  --surface: #17140f;
+  --surface-2: #1e1a13;
+  --text: #f4e8cc;
+  --text-soft: rgba(244, 232, 204, 0.74);
+  --text-mute: rgba(244, 232, 204, 0.55);
+  --accent: #d6a928;
+  --accent-strong: #e5bd3f;
+  --btn-bg: #d6a928;
+  --btn-text: #11100d;
+  --line: rgba(214, 169, 40, 0.3);
+  --line-soft: rgba(244, 232, 204, 0.14);
+}
+
+/* ---- SECTION GROUNDS -------------------------------------- */
+.sec-base {
+  background-color: var(--bg);
+  color: var(--text);
+}
+.sec-alt {
+  background-color: var(--bg-alt);
+  color: var(--text);
+}
+.sec-invert {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.section {
+  position: relative;
+  padding: clamp(4.5rem, 9vw, 9rem) 0;
+}
+
+.section-sm {
+  position: relative;
+  padding: clamp(3rem, 6vw, 5.5rem) 0;
+}
+
+/* =========================
+   02. RESET, BASE + ACCESSIBILITY
+   ========================= */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: #11100d;
+  font-family: var(--sans);
+  font-size: var(--fs-body);
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+/* the wrapper that carries the theme and paints the page */
+.page {
+  min-height: 100vh;
+  overflow-x: clip; /* decorative shapes never create side scroll */
+  background-color: var(--bg);
+  color: var(--text);
+  transition:
+    background-color 0.6s var(--ease),
+    color 0.6s var(--ease);
+  animation: page-in 0.8s var(--ease) both;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  filter: var(--img-tone);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* visible focus for keyboard users on every interactive element */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+summary:focus-visible,
+label:focus-visible {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 3px;
+}
+
+/* the hidden checkboxes that drive theme / menu / search / chat */
+.theme-input,
+.nav-toggle,
+.search-toggle,
+.ai-input,
+.wish-input,
+.add-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ...but keyboard focus still shows on the control they operate */
+.theme-input:focus-visible ~ .page .theme-switch,
+.nav-toggle:focus-visible ~ .nav-bar .nav-burger,
+.search-toggle:focus-visible ~ .nav-bar .icon-btn,
+.ai-input:focus-visible ~ .ai-launcher,
+.wish-input:focus-visible + .wish,
+.add-input:focus-visible + .add-btn {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 3px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 200;
+  padding: 0.85rem 1.4rem;
+  background-color: var(--yellow);
+  color: var(--black);
+  font-size: var(--fs-label);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transform: translateY(-160%);
+  transition: transform 0.3s var(--ease);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--page-w);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.container-wide {
+  width: 100%;
+  max-width: 1720px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* =========================
+   03. TYPOGRAPHY
+   ========================= */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--serif);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
+}
+
+.display-1 {
+  font-size: var(--fs-h1);
+}
+.display-2 {
+  font-size: var(--fs-h2);
+}
+.display-3 {
+  font-size: var(--fs-h3);
+  letter-spacing: 0.06em;
+}
+
+/* small uppercase label with a rule in front */
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-size: var(--fs-label);
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.label::before {
+  content: "";
+  width: 2.6rem;
+  height: 2px;
+  background-color: var(--accent);
+}
+
+.label-center {
+  justify-content: center;
+}
+
+.label-center::after {
+  content: "";
+  width: 2.6rem;
+  height: 2px;
+  background-color: var(--accent);
+}
+
+.lead {
+  font-size: var(--fs-lead);
+  line-height: 1.75;
+  color: var(--text-soft);
+  max-width: 60ch;
+}
+
+.caption {
+  font-size: var(--fs-small);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+
+.accent {
+  color: var(--accent);
+}
+
+/* hollow type used for second lines of big statements */
+.outline-text {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--accent);
+  text-stroke: 1.5px var(--accent);
+}
+
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  flex-wrap: wrap;
+  margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.section-head h2 {
+  margin-top: 1.1rem;
+}
+
+.section-head .lead {
+  margin-top: 1.1rem;
+}
+
+/* =========================
+   04. BUTTONS + LINKS
+   ========================= */
+.btn,
+.btn-ghost {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: 3.5rem;
+  padding: 1rem 2.4rem;
+  border: 2px solid var(--btn-bg);
+  font-size: var(--fs-btn);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition:
+    color 0.45s var(--ease),
+    border-color 0.45s var(--ease);
+}
+
+.btn {
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--text);
+  border-color: var(--line);
+}
+
+/* fill that sweeps up behind the label */
+.btn::before,
+.btn-ghost::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateY(101%);
+  transition: transform 0.5s var(--ease);
+}
+
+.btn::before {
+  background-color: var(--text);
+}
+.btn-ghost::before {
+  background-color: var(--btn-bg);
+}
+
+.btn > *,
+.btn-ghost > * {
+  position: relative;
+  z-index: 1;
+}
+
+.btn:hover {
+  color: var(--bg);
+}
+.btn-ghost:hover {
+  color: var(--btn-text);
+  border-color: var(--btn-bg);
+}
+
+.btn:hover::before,
+.btn-ghost:hover::before {
+  transform: translateY(0);
+}
+
+.btn:active,
+.btn-ghost:active {
+  transform: translateY(2px);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.btn-lg {
+  min-height: 4rem;
+  padding: 1.15rem 3rem;
+  font-size: 1rem;
+}
+
+/* arrow that slides on hover */
+.btn .arrow,
+.btn-ghost .arrow,
+.link-line .arrow {
+  display: inline-block;
+  transition: transform 0.4s var(--ease);
+}
+
+.btn:hover .arrow,
+.btn-ghost:hover .arrow,
+.link-line:hover .arrow {
+  transform: translateX(6px);
+}
+
+/* underlined text link */
+.link-line {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding-bottom: 0.4rem;
+  font-size: var(--fs-btn);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.link-line::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent);
+  transform-origin: right;
+  transition: transform 0.45s var(--ease);
+}
+
+.link-line:hover::after {
+  animation: line-sweep 0.6s var(--ease);
+}
+
+.btn-row {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2vw, 2rem);
+  flex-wrap: wrap;
+}
+
+/* =========================
+   05. EGYPTIAN DECORATIVE DETAILS
+   ========================= */
+
+/* thin repeating temple frieze */
+.frieze {
+  height: 12px;
+  background-image:
+    linear-gradient(90deg, var(--accent) 3px, transparent 3px),
+    linear-gradient(90deg, rgba(214, 169, 40, 0.22) 1px, transparent 1px);
+  background-size:
+    30px 12px,
+    15px 12px;
+  opacity: 0.8;
+}
+
+/* row of pyramids */
+.pyramid-strip {
+  height: 16px;
+  background-image: conic-gradient(
+    from 45deg at 50% 0%,
+    transparent 0deg 90deg,
+    var(--accent) 90deg 180deg,
+    transparent 180deg 360deg
+  );
+  background-size: 34px 16px;
+  background-repeat: repeat-x;
+  opacity: 0.8;
+}
+
+/* the KEMET sun disk mark */
+.sun-disk {
+  position: relative;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background-color: var(--accent);
+  flex: none;
+}
+
+.sun-disk::before {
+  content: "";
+  position: absolute;
+  inset: -0.5rem;
+  border: 1.5px solid var(--accent);
+  border-radius: 50%;
+  opacity: 0.55;
+}
+
+.sun-disk::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 3.2rem;
+  height: 1.5px;
+  background-color: var(--accent);
+  opacity: 0.4;
+  transform: translate(-50%, -50%);
+}
+
+/* soft light behind hero areas */
+.disk-glow {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(214, 169, 40, 0.24) 0%,
+    rgba(214, 169, 40, 0) 68%
+  );
+  pointer-events: none;
+}
+
+/* architectural vertical lines */
+.columns-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--line-soft) 0 1px,
+    transparent 1px 170px
+  );
+}
+
+.hairline {
+  height: 1px;
+  background-color: var(--line);
+}

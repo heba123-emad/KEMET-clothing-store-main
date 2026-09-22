@@ -1,0 +1,958 @@
+/* =========================
+   11. PRODUCT CARDS + GRID
+   ========================= */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1.5rem, 2.4vw, 2.25rem);
+}
+
+.product-grid.is-three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--surface);
+  border: 1px solid var(--line-soft);
+  transition:
+    transform 0.55s var(--ease),
+    border-color 0.55s var(--ease),
+    box-shadow 0.55s var(--ease);
+}
+
+.product-media {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-media img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  transition: transform 1.05s var(--ease);
+}
+
+/* badges */
+.badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 3;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.badge-new {
+  background-color: var(--yellow);
+  color: var(--black);
+}
+.badge-sale {
+  background-color: var(--black);
+  color: var(--bright-yellow);
+}
+.badge-best {
+  background-color: transparent;
+  color: var(--cream);
+  border: 1.5px solid var(--cream);
+  backdrop-filter: blur(4px);
+}
+
+/* wishlist heart (a real CSS toggle) */
+.wish {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  background-color: rgba(10, 9, 8, 0.55);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  transition:
+    background-color 0.35s var(--ease),
+    transform 0.35s var(--ease);
+}
+
+.wish:hover {
+  background-color: var(--yellow);
+  transform: scale(1.06);
+}
+
+.heart {
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+  transform: rotate(-45deg) scale(0.92);
+  border: 2px solid var(--cream);
+  border-top: 0;
+  border-right: 0;
+  transition:
+    background-color 0.3s var(--ease),
+    border-color 0.3s var(--ease);
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid var(--cream);
+  border-radius: 50%;
+  transition:
+    background-color 0.3s var(--ease),
+    border-color 0.3s var(--ease);
+}
+
+.heart::before {
+  top: -0.56rem;
+  left: -2px;
+  border-bottom: 0;
+  border-right: 0;
+}
+.heart::after {
+  right: -0.56rem;
+  top: -2px;
+  border-bottom: 0;
+  border-left: 0;
+}
+
+.wish:hover .heart,
+.wish:hover .heart::before,
+.wish:hover .heart::after {
+  border-color: var(--black);
+}
+
+/* saved state */
+.wish-input:checked + .wish {
+  background-color: var(--yellow);
+}
+
+.wish-input:checked + .wish .heart,
+.wish-input:checked + .wish .heart::before,
+.wish-input:checked + .wish .heart::after {
+  background-color: var(--black);
+  border-color: var(--black);
+}
+
+.wish-input:checked + .wish {
+  animation: pop 0.4s var(--ease);
+}
+
+/* quick view revealed over the image */
+.quick-view {
+  position: absolute;
+  left: 50%;
+  bottom: 1.25rem;
+  z-index: 3;
+  padding: 0.85rem 1.6rem;
+  background-color: var(--cream);
+  color: var(--black);
+  font-size: var(--fs-label);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translate(-50%, 1rem);
+  transition:
+    opacity 0.45s var(--ease),
+    transform 0.45s var(--ease),
+    background-color 0.35s var(--ease);
+}
+
+.quick-view:hover {
+  background-color: var(--yellow);
+}
+
+.product-body {
+  display: flex;
+  flex: 1; /* lets the buttons line up across a row */
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: clamp(1.1rem, 1.6vw, 1.6rem);
+}
+
+.product-cat {
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+
+.product-name {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text);
+  transition: color 0.4s var(--ease);
+}
+
+/* Arabic product names: Cinzel has no Arabic glyphs, so these fall back to a
+   system Arabic stack, drop the letter-spacing (it breaks Arabic joining)
+   and read right to left. */
+.product-name[lang="ar"],
+.cart-product h3[lang="ar"] {
+  font-family: "Segoe UI", Tahoma, "Noto Naskh Arabic", "Arial", sans-serif;
+  font-size: 1.22rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0;
+  text-align: left;
+  text-transform: none;
+}
+
+.product-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem 1rem;
+  flex-wrap: wrap;
+  margin: 0.35rem 0 1rem;
+}
+
+.product-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  white-space: nowrap; /* keeps "950 EGP" beside the sale price */
+}
+
+.product-price s {
+  margin-inline-start: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--text-mute);
+}
+
+/* colour dots */
+.swatches {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.swatches span {
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+}
+
+.sw-sand {
+  background-color: var(--sand);
+}
+.sw-black {
+  background-color: var(--black);
+}
+.sw-cream {
+  background-color: var(--cream);
+}
+.sw-gold {
+  background-color: var(--yellow);
+}
+.sw-brown {
+  background-color: var(--brown);
+}
+
+/* add to bag, with a real "added" state */
+.add-btn {
+  display: grid;
+  place-items: center;
+  min-height: 3.25rem;
+  margin-top: auto; /* sits at the bottom, whatever the name length */
+  padding: 0.85rem 1rem;
+  border: 2px solid var(--accent);
+  background-color: transparent;
+  color: var(--accent);
+  font-size: var(--fs-btn);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background-color 0.4s var(--ease),
+    color 0.4s var(--ease);
+}
+
+.add-btn .added {
+  display: none;
+}
+
+.add-btn:hover {
+  background-color: var(--accent);
+  color: var(--btn-text);
+}
+
+.add-input:checked + .add-btn {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: var(--btn-text);
+  animation: pop 0.4s var(--ease);
+}
+
+.add-input:checked + .add-btn .idle {
+  display: none;
+}
+.add-input:checked + .add-btn .added {
+  display: inline;
+}
+
+/* card hover */
+.product-card:hover {
+  transform: translateY(-0.6rem);
+  border-color: var(--accent);
+  box-shadow: var(--shadow);
+}
+
+.product-card:hover .product-media img {
+  transform: scale(1.07);
+}
+.product-card:hover .product-name {
+  color: var(--accent);
+}
+
+.product-card:hover .quick-view {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* touch screens have no hover, so keep quick view visible */
+@media (hover: none) {
+  .quick-view {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.grid-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+/* =========================
+   12. SHOP UI
+   ========================= */
+.shop-layout {
+  display: grid;
+  grid-template-columns: 19rem 1fr;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: start;
+}
+
+/* ---- filter sidebar ---- */
+.filters {
+  position: sticky;
+  top: 7rem;
+  padding: 1.75rem;
+  border: 1px solid var(--line);
+  background-color: var(--surface);
+}
+
+.filters-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.filters-head h2 {
+  font-size: 1.15rem;
+  letter-spacing: 0.16em;
+}
+
+.filters-head a {
+  font-size: var(--fs-label);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.filter-group {
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.filter-group summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.15rem 0;
+  font-size: var(--fs-btn);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  list-style: none;
+  cursor: pointer;
+  transition: color 0.3s var(--ease);
+}
+
+.filter-group summary::-webkit-details-marker {
+  display: none;
+}
+.filter-group summary:hover {
+  color: var(--accent);
+}
+
+.filter-group summary::after {
+  content: "";
+  width: 0.55rem;
+  height: 0.55rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 0.35s var(--ease);
+}
+
+.filter-group[open] summary::after {
+  transform: rotate(-135deg) translateY(-2px);
+}
+
+.filter-body {
+  padding-bottom: 1.35rem;
+}
+
+/* checkbox / radio rows */
+.check {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  font-size: var(--fs-small);
+  cursor: pointer;
+  transition: color 0.3s var(--ease);
+}
+
+.check:hover {
+  color: var(--accent);
+}
+
+/* custom checkboxes and radios, used by filters, sort and forms */
+.check input,
+.checkbox input,
+.sort-menu input {
+  appearance: none;
+  -webkit-appearance: none;
+  display: grid;
+  place-items: center;
+  width: 1.2rem;
+  height: 1.2rem;
+  flex: none;
+  border: 1.5px solid var(--line);
+  background-color: transparent;
+  cursor: pointer;
+  transition:
+    border-color 0.3s var(--ease),
+    background-color 0.3s var(--ease);
+}
+
+.check input[type="radio"],
+.sort-menu input[type="radio"] {
+  border-radius: 50%;
+}
+
+.check input:hover,
+.checkbox input:hover,
+.sort-menu input:hover {
+  border-color: var(--accent);
+}
+
+.check input:checked,
+.checkbox input:checked,
+.sort-menu input:checked {
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* tick mark */
+.check input[type="checkbox"]:checked::after,
+.checkbox input[type="checkbox"]:checked::after {
+  content: "";
+  width: 0.32rem;
+  height: 0.62rem;
+  margin-top: -2px;
+  border: solid var(--btn-text);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* radio dot */
+.check input[type="radio"]:checked::after,
+.sort-menu input[type="radio"]:checked::after {
+  content: "";
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background-color: var(--btn-text);
+}
+
+.check .count {
+  margin-inline-start: auto;
+  font-size: 0.8125rem;
+  color: var(--text-mute);
+}
+
+/* size chips */
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  min-width: 3rem;
+  padding: 0.6rem 0.85rem;
+  border: 1px solid var(--line);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.35s var(--ease);
+}
+
+.chip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.chip input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.chip:has(input:checked) {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: var(--btn-text);
+}
+
+/* colour swatch picker */
+.swatch-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.swatch {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  cursor: pointer;
+  transition:
+    transform 0.35s var(--ease),
+    border-color 0.35s var(--ease);
+}
+
+.swatch:hover {
+  transform: scale(1.1);
+  border-color: var(--accent);
+}
+
+.swatch input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.swatch i {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  display: block;
+}
+
+.swatch:has(input:checked) {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+/* ---- toolbar above the grid ---- */
+.shop-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  padding-bottom: 1.5rem;
+  margin-bottom: clamp(1.75rem, 3vw, 2.5rem);
+  border-bottom: 1px solid var(--line);
+}
+
+.result-count {
+  font-size: var(--fs-small);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+
+.result-count strong {
+  color: var(--text);
+}
+
+.toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* sort dropdown */
+.sort {
+  position: relative;
+}
+
+.sort summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.8rem 1.25rem;
+  border: 1px solid var(--line);
+  font-size: var(--fs-small);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  list-style: none;
+  cursor: pointer;
+  transition:
+    border-color 0.35s var(--ease),
+    color 0.35s var(--ease);
+}
+
+.sort summary::-webkit-details-marker {
+  display: none;
+}
+.sort summary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.sort summary::after {
+  content: "";
+  width: 0.45rem;
+  height: 0.45rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 0.35s var(--ease);
+}
+
+.sort[open] summary::after {
+  transform: rotate(-135deg) translateY(-2px);
+}
+
+.sort-menu {
+  position: absolute;
+  top: calc(100% + 0.6rem);
+  right: 0;
+  z-index: 40;
+  width: 17rem;
+  padding: 0.5rem;
+  background-color: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  animation: drop-in 0.3s var(--ease) both;
+}
+
+.sort-menu label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0.85rem;
+  font-size: var(--fs-small);
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition:
+    background-color 0.3s var(--ease),
+    color 0.3s var(--ease);
+}
+
+.sort-menu label:hover {
+  background-color: var(--bg-alt);
+  color: var(--accent);
+}
+
+/* category chip navigation */
+.cat-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.cat-nav a {
+  padding: 0.7rem 1.25rem;
+  border: 1px solid var(--line);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  transition: all 0.35s var(--ease);
+}
+
+.cat-nav a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.cat-nav a[aria-current="page"] {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: var(--btn-text);
+}
+
+/* active filter pills */
+.active-filters {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.active-filters .caption {
+  margin-inline-end: 0.35rem;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--accent);
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.pill b {
+  font-weight: 700;
+}
+
+.pill .x {
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: transform 0.35s var(--ease);
+}
+
+.pill:hover .x {
+  transform: rotate(90deg);
+}
+
+/* =========================
+   PAGINATION
+   ========================= */
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+#page-numbers {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.pagination button {
+  display: grid;
+  place-items: center;
+
+  min-width: 3rem;
+  height: 3rem;
+
+  padding: 0 0.85rem;
+
+  border: 1px solid var(--line);
+  background-color: transparent;
+
+  color: var(--text);
+
+  font-size: var(--fs-small);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.35s var(--ease),
+    border-color 0.35s var(--ease),
+    color 0.35s var(--ease),
+    opacity 0.35s var(--ease);
+}
+
+.pagination button:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.pagination button.active {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: var(--btn-text);
+}
+
+.pagination button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+/* empty state block */
+.empty-state {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  padding: clamp(2.5rem, 5vw, 4rem);
+  border: 1px dashed var(--line);
+  text-align: center;
+  background-color: var(--surface);
+}
+
+.empty-mark {
+  display: grid;
+  place-items: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  border: 2px solid var(--line);
+  border-radius: 50%;
+  color: var(--accent);
+  font-family: var(--serif);
+  font-size: 1.5rem;
+}
+
+.empty-state h3 {
+  font-size: 1.35rem;
+}
+.empty-state p {
+  color: var(--text-mute);
+  max-width: 42ch;
+}
+
+/* =========================
+   18. PAGE HEROES + BREADCRUMBS
+   ========================= */
+.page-hero {
+  position: relative;
+  padding: clamp(3rem, 6vw, 5.5rem) 0 clamp(2.5rem, 5vw, 4.5rem);
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+
+.page-hero .disk-glow {
+  width: 38rem;
+  height: 38rem;
+  top: -14rem;
+  right: -8rem;
+}
+
+.page-hero-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: end;
+}
+
+.page-hero h1 {
+  margin: 1.25rem 0 1.25rem;
+  font-size: var(--fs-h1);
+}
+
+.page-hero h1 em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.page-hero-media {
+  position: relative;
+}
+
+.page-hero-media img {
+  width: 100%;
+  aspect-ratio: 5 / 4;
+  object-fit: cover;
+}
+
+.page-hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--accent);
+  transform: translate(1rem, 1rem);
+  pointer-events: none;
+}
+
+.crumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  font-size: var(--fs-small);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+
+.crumbs a {
+  transition: color 0.3s var(--ease);
+}
+.crumbs a:hover {
+  color: var(--accent);
+}
+.crumbs [aria-current="page"] {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.page-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.5rem;
+  margin-top: 1.75rem;
+}
+
+.page-hero-meta div {
+  padding-inline-start: 1rem;
+  border-inline-start: 2px solid var(--line);
+}
+
+.page-hero-meta strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  color: var(--accent);
+}
+
+.page-hero-meta span {
+  font-size: var(--fs-label);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}

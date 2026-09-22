@@ -1,0 +1,11 @@
+/* KEMET - Modular stylesheet
+   Keep the same <link rel="stylesheet" href="style.css"> in every HTML page.
+*/
+@import url("01-base.css");
+@import url("02-header.css");
+@import url("03-home.css");
+@import url("04-shop.css");
+@import url("05-auth.css");
+@import url("06-cart-ai.css");
+@import url("07-footer.css");
+@import url("08-responsive.css");

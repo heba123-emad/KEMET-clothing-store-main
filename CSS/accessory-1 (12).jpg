@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Your KEMET bag. Online across Egypt." />
+    <title>KEMET | Your bag</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main"> Skip to content </a>
+    <!-- THEME SWITCH
+       This checkbox sits before the page wrapper. When it is checked the
+       stylesheet swaps every colour variable, which turns KEMET NIGHT
+       into KEMET DAY. No JavaScript involved. -->
+    <input
+      class="theme-input"
+      type="checkbox"
+      id="theme-toggle"
+      aria-label="Switch between dark and light mode"
+    />
+    <div class="page">
+      <!-- ANNOUNCEMENT BAR -->
+      <div class="announce">
+        <div class="announce-track">
+          <p>
+            <span>
+              ONLINE ACROSS EGYPT &mdash; NEW COLLECTION AVAILABLE NOW
+            </span>
+            <span> FREE SHIPPING OVER 2,000 EGP </span>
+            <span> ANCIENT ROOTS. MODERN FORM. </span>
+          </p>
+          <p>
+            <span>
+              ONLINE ACROSS EGYPT &mdash; NEW COLLECTION AVAILABLE NOW
+            </span>
+            <span> FREE SHIPPING OVER 2,000 EGP </span>
+            <span> ANCIENT ROOTS. MODERN FORM. </span>
+          </p>
+        </div>
+      </div>
+      <!-- NAVBAR -->
+      <header class="site-header">
+        <input
+          class="nav-toggle"
+          type="checkbox"
+          id="nav-toggle"
+          aria-label="Open the menu"
+        />
+        <input
+          class="search-toggle"
+          type="checkbox"
+          id="search-toggle"
+          aria-label="Open search"
+        />
+        <div class="nav-bar">
+          <a class="logo" href="index.html">
+            <span class="sun-disk" aria-hidden="true"> </span>
+            <span class="logo-name"> KEMET </span>
+          </a>
+          <nav class="nav-center" aria-label="Main navigation">
+            <a class="nav-link" href="products.html"> Shop </a>
+            <a class="nav-link" href="index.html#collections"> Collections </a>
+            <a class="nav-link" href="index.html#about"> About </a>
+            <a class="nav-link" href="index.html#contact"> Contact </a>
+          </nav>
+          <div class="nav-tools">
+            <!-- THEME -->
+            <label
+              class="theme-switch"
+              for="theme-toggle"
+              title="Dark and light mode"
+            >
+              <span class="theme-knob" aria-hidden="true"> </span>
+              <span class="t-moon" aria-hidden="true"> </span>
+              <span class="t-sun" aria-hidden="true"> </span>
+              <span class="sr-only"> Switch between dark and light mode </span>
+            </label>
+            <a class="nav-account" href="login.html"> Login </a>
+            <a class="nav-bag" href="cart.html" aria-current="page">
+              Bag
+              <span class="bag-count"> 3 </span>
+            </a>
+            <label class="nav-burger" for="nav-toggle" title="Menu">
+              <span> </span>
+              <span> </span>
+              <span> </span>
+              <span class="sr-only"> Open the menu </span>
+            </label>
+          </div>
+        </div>
+        <!-- MOBILE MENU -->
+        <nav class="nav-drawer" aria-label="Mobile navigation">
+          <a href="products.html">
+            Shop all
+            <span> 01 </span>
+          </a>
+          <a href="index.html#collections">
+            Collections
+            <span> 02 </span>
+          </a>
+          <a href="index.html#about">
+            About
+            <span> 03 </span>
+          </a>
+          <a href="index.html#contact">
+            Contact
+            <span> 04 </span>
+          </a>
+          <a href="cart.html">
+            Bag
+            <span> 05 </span>
+          </a>
+          <a href="login.html">
+            Login
+            <span> 06 </span>
+          </a>
+          <div class="drawer-tools">
+            <label class="theme-switch" for="theme-toggle">
+              <span class="theme-knob" aria-hidden="true"> </span>
+              <span class="t-moon" aria-hidden="true"> </span>
+              <span class="t-sun" aria-hidden="true"> </span>
+            </label>
+          </div>
+        </nav>
+      </header>
+      <main id="main">
+        <!-- CART HERO -->
+        <section class="page-hero sec-base">
+          <span class="disk-glow" aria-hidden="true"> </span>
+          <div class="columns-bg" aria-hidden="true"></div>
+          <div class="container">
+            <nav class="crumbs" aria-label="Breadcrumb">
+              <a href="index.html"> Home </a>
+              /
+              <span aria-current="page"> Bag </span>
+            </nav>
+            <h1>
+              Your KEMET
+              <em> bag </em>
+            </h1>
+            <p class="lead">
+              Three pieces selected &middot; online across Egypt
+            </p>
+          </div>
+        </section>
+        <!-- CART -->
+        <section class="section-sm sec-base">
+          <div class="container">
+            <div class="cart-layout">
+              <div>
+                <div class="cart-head">
+                  <p>Product</p>
+                  <p>Price</p>
+                  <p>Quantity</p>
+                  <p>
+                    <span class="sr-only"> Remove </span>
+                  </p>
+                </div>
+                <article class="cart-item">
+                  <div class="cart-product">
+                    <img src="images/tshirt-1.jpg" alt="KEMET SIGNATURE TEE" />
+                    <div>
+                      <h3>KEMET SIGNATURE TEE</h3>
+                      <p class="product-cat">T-Shirts</p>
+                      <p class="cart-variant">Size M &middot; Sand</p>
+                    </div>
+                  </div>
+                  <p class="cart-price">850 EGP</p>
+                  <div class="qty">
+                    <button type="button" aria-label="Decrease quantity">
+                      &minus;
+                    </button>
+                    <span> 1 </span>
+                    <button type="button" aria-label="Increase quantity">
+                      +
+                    </button>
+                  </div>
+                  <button
+                    class="cart-remove"
+                    type="button"
+                    aria-label="Remove KEMET SIGNATURE TEE"
+                  >
+                    &times;
+                  </button>
+                </article>
+                <article class="cart-item">
+                  <div class="cart-product">
+                    <img src="images/hoodie-1.jpg" alt="KEMET ARCH HOODIE" />
+                    <div>
+                      <h3>KEMET ARCH HOODIE</h3>
+                      <p class="product-cat">Hoodies</p>
+                      <p class="cart-variant">Size L &middot; Papyrus</p>
+                    </div>
+                  </div>
+                  <p class="cart-price">1,450 EGP</p>
+                  <div class="qty">
+                    <button type="button" aria-label="Decrease quantity">
+                      &minus;
+                    </button>
+                    <span> 1 </span>
+                    <button type="button" aria-label="Increase quantity">
+                      +
+                    </button>
+                  </div>
+                  <button
+                    class="cart-remove"
+                    type="button"
+                    aria-label="Remove KEMET ARCH HOODIE"
+                  >
+                    &times;
+                  </button>
+                </article>
+                <article class="cart-item">
+                  <div class="cart-product">
+                    <img src="images/jeans-1.jpg" alt="KARNAK STRAIGHT JEANS" />
+                    <div>
+                      <h3>KARNAK STRAIGHT JEANS</h3>
+                      <p class="product-cat">Jeans</p>
+                      <p class="cart-variant">Size 32 &middot; Indigo sand</p>
+                    </div>
+                  </div>
+                  <p class="cart-price">1,600 EGP</p>
+                  <div class="qty">
+                    <button type="button" aria-label="Decrease quantity">
+                      &minus;
+                    </button>
+                    <span> 1 </span>
+                    <button type="button" aria-label="Increase quantity">
+                      +
+                    </button>
+                  </div>
+                  <button
+                    class="cart-remove"
+                    type="button"
+                    aria-label="Remove KARNAK STRAIGHT JEANS"
+                  >
+                    &times;
+                  </button>
+                </article>
+                <div class="cart-actions">
+                  <a class="link-line" href="products.html">
+                    Continue shopping
+                    <span class="arrow"> &rarr; </span>
+                  </a>
+                  <p class="caption">Free shipping over 2,000 EGP</p>
+                </div>
+                <div class="trust-strip">
+                  <div>
+                    <span class="trust-mark" aria-hidden="true"> EG </span>
+                    Online across Egypt
+                  </div>
+                  <div>
+                    <span class="trust-mark" aria-hidden="true"> 2-4 </span>
+                    Delivery in 2 &ndash; 4 days
+                  </div>
+                  <div>
+                    <span class="trust-mark" aria-hidden="true"> 14 </span>
+                    14-day returns
+                  </div>
+                  <div>
+                    <span class="trust-mark" aria-hidden="true"> COD </span>
+                    Card or cash on delivery
+                  </div>
+                </div>
+                <!-- SAVED ITEMS - empty state -->
+                <div class="section-sm">
+                  <div class="section-head" style="margin-bottom: 1.5rem">
+                    <div>
+                      <span class="label"> Saved for later </span>
+                      <h2 class="display-3">Your wishlist</h2>
+                    </div>
+                  </div>
+                  <div class="empty-state">
+                    <span class="empty-mark" aria-hidden="true"> &#9825; </span>
+                    <h3>Nothing saved yet</h3>
+                    <p>
+                      Tap the heart on any product to keep it here while you
+                      decide.
+                    </p>
+                    <a class="btn-ghost" href="products.html">
+                      <span> Browse the collection </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <aside class="summary" aria-label="Order summary">
+                <h2>Order summary</h2>
+                <div class="promo-code">
+                  <label class="sr-only" for="promo"> Promo code </label>
+                  <input id="promo" type="text" placeholder="Promo code" />
+                  <button type="button">Apply</button>
+                </div>
+                <div class="summary-line">
+                  <span> Subtotal </span>
+                  <strong> 3,900 EGP </strong>
+                </div>
+                <div class="summary-line">
+                  <span> Shipping </span>
+                  <strong class="free"> Free </strong>
+                </div>
+                <div class="summary-line">
+                  <span> Member discount </span>
+                  <strong> &minus; 200 EGP </strong>
+                </div>
+                <div class="ship-bar">
+                  <p class="caption">You have unlocked free delivery</p>
+                  <span class="ship-track">
+                    <span class="ship-fill"> </span>
+                  </span>
+                </div>
+                <div class="summary-total">
+                  <span> Total </span>
+                  <b> 3,700 EGP </b>
+                </div>
+                <a class="btn btn-block btn-lg" href="#">
+                  <span> Checkout </span>
+                </a>
+                <p class="summary-note">
+                  Taxes included. Delivery to every governorate in Egypt within
+                  2 &ndash; 4 days. Returns accepted within 14 days.
+                </p>
+              </aside>
+            </div>
+          </div>
+        </section>
+        <!-- RECOMMENDED -->
+        <section class="section-sm sec-alt">
+          <div class="container-wide">
+            <div class="section-head reveal">
+              <div>
+                <span class="label"> Complete the look </span>
+                <h2 class="display-2">
+                  You may
+                  <br />
+                  also like
+                </h2>
+              </div>
+              <a class="link-line" href="products.html">
+                View all
+                <span class="arrow"> &rarr; </span>
+              </a>
+            </div>
+            <div class="product-grid stagger">
+              <article class="product-card">
+                <div class="product-media">
+                  <span class="badge badge-best"> BESTSELLER </span>
+                  <img
+                    src="images/jacket-2.jpg"
+                    alt="Sandstone Bomber - KEMET jackets"
+                  />
+                  <input class="wish-input" type="checkbox" id="wish-1" />
+                  <label class="wish" for="wish-1" title="Save to wishlist">
+                    <span class="heart" aria-hidden="true"> </span>
+                    <span class="sr-only">
+                      Save SANDSTONE BOMBER to wishlist
+                    </span>
+                  </label>
+                  <a class="quick-view" href="jackets.html"> Quick view </a>
+                </div>
+                <div class="product-body">
+                  <p class="product-cat">Jackets</p>
+                  <h3 class="product-name">SANDSTONE BOMBER</h3>
+                  <div class="product-meta">
+                    <p class="product-price">2,200 EGP</p>
+                    <div class="swatches" aria-hidden="true">
+                      <span class="sw-cream"> </span>
+                      <span class="sw-brown"> </span>
+                      <span class="sw-gold"> </span>
+                    </div>
+                  </div>
+                  <input class="add-input" type="checkbox" id="add-2" />
+                  <label class="add-btn" for="add-2">
+                    <span class="idle"> Add to bag </span>
+                    <span class="added"> Added to bag &#10003; </span>
+                  </label>
+                </div>
+              </article>
+              <article class="product-card">
+                <div class="product-media">
+                  <span class="badge badge-best"> BESTSELLER </span>
+                  <img
+                    src="images/shirt-2.jpg"
+                    alt="Luxor Camp Collar - KEMET shirts"
+                  />
+                  <input class="wish-input" type="checkbox" id="wish-3" />
+                  <label class="wish" for="wish-3" title="Save to wishlist">
+                    <span class="heart" aria-hidden="true"> </span>
+                    <span class="sr-only">
+                      Save LUXOR CAMP COLLAR to wishlist
+                    </span>
+                  </label>
+                  <a class="quick-view" href="shirts.html"> Quick view </a>
+                </div>
+                <div class="product-body">
+                  <p class="product-cat">Shirts</p>
+                  <h3 class="product-name">LUXOR CAMP COLLAR</h3>
+                  <div class="product-meta">
+                    <p class="product-price">1,250 EGP</p>
+                    <div class="swatches" aria-hidden="true">
+                      <span class="sw-cream"> </span>
+                      <span class="sw-brown"> </span>
+                      <span class="sw-gold"> </span>
+                    </div>
+                  </div>
+                  <input class="add-input" type="checkbox" id="add-4" />
+                  <label class="add-btn" for="add-4">
+                    <span class="idle"> Add to bag </span>
+                    <span class="added"> Added to bag &#10003; </span>
+                  </label>
+                </div>
+              </article>
+              <article class="product-card">
+                <div class="product-media">
+                  <span class="badge badge-new"> NEW </span>
+                  <img
+                    src="images/accessory-1.jpg"
+                    alt="سلاسل مصريه اصيله - KEMET accessories"
+                  />
+                  <input class="wish-input" type="checkbox" id="wish-5" />
+                  <label class="wish" for="wish-5" title="Save to wishlist">
+                    <span class="heart" aria-hidden="true"> </span>
+                    <span class="sr-only">
+                      Save سلاسل مصريه اصيله to wishlist
+                    </span>
+                  </label>
+                  <a class="quick-view" href="accessories.html"> Quick view </a>
+                </div>
+                <div class="product-body">
+                  <p class="product-cat">Accessories</p>
+                  <h3 class="product-name" lang="ar">سلاسل مصريه اصيله</h3>
+                  <div class="product-meta">
+                    <p class="product-price">650 EGP</p>
+                    <div class="swatches" aria-hidden="true">
+                      <span class="sw-sand"> </span>
+                      <span class="sw-black"> </span>
+                      <span class="sw-cream"> </span>
+                    </div>
+                  </div>
+                  <input class="add-input" type="checkbox" id="add-6" />
+                  <label class="add-btn" for="add-6">
+                    <span class="idle"> Add to bag </span>
+                    <span class="added"> Added to bag &#10003; </span>
+                  </label>
+                </div>
+              </article>
+              <article class="product-card">
+                <div class="product-media">
+                  <img
+                    src="images/set-3.jpg"
+                    alt="Dune Track Set - KEMET sets"
+                  />
+                  <input class="wish-input" type="checkbox" id="wish-7" />
+                  <label class="wish" for="wish-7" title="Save to wishlist">
+                    <span class="heart" aria-hidden="true"> </span>
+                    <span class="sr-only">
+                      Save DUNE TRACK SET to wishlist
+                    </span>
+                  </label>
+                  <a class="quick-view" href="sets.html"> Quick view </a>
+                </div>
+                <div class="product-body">
+                  <p class="product-cat">Sets</p>
+                  <h3 class="product-name">DUNE TRACK SET</h3>
+                  <div class="product-meta">
+                    <p class="product-price">2,250 EGP</p>
+                    <div class="swatches" aria-hidden="true">
+                      <span class="sw-black"> </span>
+                      <span class="sw-sand"> </span>
+                      <span class="sw-gold"> </span>
+                    </div>
+                  </div>
+                  <input class="add-input" type="checkbox" id="add-8" />
+                  <label class="add-btn" for="add-8">
+                    <span class="idle"> Add to bag </span>
+                    <span class="added"> Added to bag &#10003; </span>
+                  </label>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+      <!-- FOOTER -->
+      <footer class="site-footer" id="contact">
+        <div class="container">
+          <div class="footer-top">
+            <div class="footer-brand">
+              <a class="logo" href="index.html">
+                <span class="sun-disk" aria-hidden="true"> </span>
+                <span class="logo-name"> KEMET </span>
+              </a>
+              <p class="footer-motto">
+                Ancient roots.
+                <br />
+                Modern form.
+              </p>
+              <p class="footer-motto-ar" lang="ar" dir="rtl">
+                &#1580; &#1584; &#1608; &#1585; &#1602; &#1583; &#1610; &#1605;
+                &#1577; . &#1588; &#1603; &#1604; &#1581; &#1583; &#1610;
+                &#1579; .
+              </p>
+              <p class="footer-note">
+                A modern Egyptian fashion label working between the geometry of
+                the old world and the pace of the new one. Designed in Egypt,
+                delivered across Egypt.
+              </p>
+            </div>
+            <div class="footer-col">
+              <h3>Navigation</h3>
+              <ul>
+                <li>
+                  <a href="products.html"> Shop all </a>
+                </li>
+                <li>
+                  <a href="index.html#collections"> Collections </a>
+                </li>
+                <li>
+                  <a href="index.html#about"> About </a>
+                </li>
+                <li>
+                  <a href="index.html#faq"> FAQ </a>
+                </li>
+                <li>
+                  <a href="login.html"> Login </a>
+                </li>
+                <li>
+                  <a href="register.html"> Create account </a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h3>Categories</h3>
+              <ul>
+                <li>
+                  <a href="tshirts.html"> T-Shirts </a>
+                </li>
+                <li>
+                  <a href="shirts.html"> Shirts </a>
+                </li>
+                <li>
+                  <a href="hoodies.html"> Hoodies </a>
+                </li>
+                <li>
+                  <a href="jeans.html"> Jeans </a>
+                </li>
+                <li>
+                  <a href="pants.html"> Pants </a>
+                </li>
+                <li>
+                  <a href="dresses.html"> Dresses </a>
+                </li>
+                <li>
+                  <a href="jackets.html"> Jackets </a>
+                </li>
+                <li>
+                  <a href="sets.html"> Sets </a>
+                </li>
+                <li>
+                  <a href="accessories.html"> Accessories </a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-col footer-contact">
+              <h3>Contact</h3>
+              <p>
+                <strong> Phone </strong>
+                <a href="tel:+201015797622"> 01015797622 </a>
+              </p>
+              <p>
+                <strong> Email </strong>
+                <a href="mailto:hello@kemet-fashion.com">
+                  hello@kemet-fashion.com
+                </a>
+              </p>
+              <p>
+                <strong> Availability </strong>
+                Online across Egypt &middot; delivery in 2 &ndash; 4 days
+              </p>
+              <div class="social-row" aria-hidden="true">
+                <span class="social-mark"> IG </span>
+                <span class="social-mark"> TT </span>
+                <span class="social-mark"> FB </span>
+              </div>
+              <p class="social-note">
+                Social channels are not live yet &mdash; these marks are
+                placeholders.
+              </p>
+            </div>
+          </div>
+          <p class="footer-word" aria-hidden="true">KEMET</p>
+          <div class="footer-bottom">
+            <p>&copy; 2026 KEMET. All rights reserved.</p>
+            <p>Designed in Egypt &mdash; online across Egypt</p>
+            <p>Shipping &middot; Returns &middot; Privacy</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- /page -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
